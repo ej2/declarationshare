@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>{{ declaration }}</h1>
+                <hr>
+                <p>This is declaration was made on {{ declaration.date_created }}  by {{ declaration.user }}</p>
+                <p><a class="btn btn-primary btn-lg" href="#" role="button">Post your own »</a></p>
+            </div>
+        </div>
+    </header>
+{% endblock header %}
+
+{% block content %}
+
+
+
+{% endblock content %}
+
