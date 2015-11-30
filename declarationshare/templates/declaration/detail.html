@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 
+{% block meta %}
+    <meta property="og:title" content="Your awesome title goes here, about 90 characters in length."/>
+    <meta property="og:description" content="Compelling description of URL that is about 300 characters in length."/>
+    <meta property="og:url" content="http://declarationshare.com/">
+    <meta property="og:image" content="YOURIMAGEURLGOESHERE.JPG">
+    <meta property="og:type" content="blog"/>
+{% endblock meta %}
+
 {% block header %}
     <header>
         <div class="header-content">
@@ -7,15 +15,32 @@
                 <h1>{{ declaration }}</h1>
                 <hr>
                 <p>This is declaration was made on {{ declaration.date_created }}  by {{ declaration.user }}</p>
-                <p><a class="btn btn-primary btn-lg" href="#" role="button">Post your own »</a></p>
+
+                <p>
+                  <a class="btn btn-primary btn-lg" data-toggle="modal"
+                     data-target="#modalCreate" href="{% url 'declaration:new' %}">Post your own »</a>
+                </p>
             </div>
         </div>
     </header>
 {% endblock header %}
 
 {% block content %}
-
-
-
+  <div class="modal fade" id="modalCreate"></div>
 {% endblock content %}
 
+
+{% block additional-js %}
+  <script>
+    $('#modalCreate').on('show.bs.modal', function (event) {
+      var modal = $(this)
+      $.ajax({
+        url: "{% url 'declaration:new' %}",
+        context: document.body
+      }).done(function(response) {
+        modal.html(response);
+        alert(response);
+      });
+    })
+  </script>
+{% endblock additional-js %}

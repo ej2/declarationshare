@@ -36,3 +36,7 @@
 [hidden][style="display: block;"] {
   display: block !important;
 }
+
+.form-text {
+  width: 300px;
+}

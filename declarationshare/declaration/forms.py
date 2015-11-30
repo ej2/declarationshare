@@ -5,7 +5,7 @@ from declarationshare.declaration.models import Declaration
 
 
 class DeclarationForm(forms.Form):
-    text = forms.CharField(max_length=255, widget=forms.TextInput())
+    text = forms.CharField(max_length=255, widget=forms.TextInput(attrs={"class": "span2"}))
     anonymous = forms.BooleanField(required=False, widget=forms.CheckboxInput())
     author = forms.CharField(max_length=50, widget=forms.TextInput())
 
