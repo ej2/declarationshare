@@ -13,12 +13,13 @@
         <div class="header-content">
             <div class="header-content-inner">
                 <h1>{{ declaration }}</h1>
-                <hr>
-                <p>This is declaration was made on {{ declaration.date_created }}  by {{ declaration.user }}</p>
+                <p>
+                  This is declaration was made on {{ declaration.date_created|date:"M d, Y" }} by
+                  {% if declaration.anonymous %}Anonynomus{% else %}{{ declaration.author }}{% endif %}
+                </p>
 
                 <p>
-                  <a class="btn btn-primary btn-lg" data-toggle="modal"
-                     data-target="#modalCreate" href="{% url 'declaration:new' %}">Post your own »</a>
+                  <a class="btn btn-primary btn-lg" href="{% url 'declaration:new' %}#create">Post your own »</a>
                 </p>
             </div>
         </div>
@@ -26,21 +27,4 @@
 {% endblock header %}
 
 {% block content %}
-  <div class="modal fade" id="modalCreate"></div>
 {% endblock content %}
-
-
-{% block additional-js %}
-  <script>
-    $('#modalCreate').on('show.bs.modal', function (event) {
-      var modal = $(this)
-      $.ajax({
-        url: "{% url 'declaration:new' %}",
-        context: document.body
-      }).done(function(response) {
-        modal.html(response);
-        alert(response);
-      });
-    })
-  </script>
-{% endblock additional-js %}

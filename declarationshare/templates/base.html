@@ -71,14 +71,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Declaration Share</a>
+                <a class="navbar-brand page-scroll" href="{% url "home" %}">Declaration Share</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="{% url "about" %}">About</a>
                     </li>
 
                 </ul>
@@ -105,7 +105,23 @@
         <!-- /.container-fluid -->
     </nav>
     {% block header %}
-
+      <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>Make Your Declaration</h1>
+                <hr>
+                <p>
+                  Planning on taking over the world? Maybe you’ve decided to
+                  be the first to climb Mount Everest while
+                  wearing fuzzy pink bunny slippers? Are you a hopeless ice cream addict, an
+                  expert hula hooper, or a rescuer of small turtles found floundering on the road?
+                  Who are you? Who do you want to be? What will you do? Proclaim,
+                  announce and declare it here -- the world wants to know!  
+                </p>
+                <a href="{% url "declaration:new" %}#create" class="btn btn-primary btn-xl page-scroll">Share your declaration</a>
+            </div>
+        </div>
+      </header>
     {% endblock header %}
 
     <div class="container">
@@ -115,12 +131,11 @@
               <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
           {% endfor %}
       {% endif %}
+    </div> <!-- /container -->
 
       {% block content %}
 
       {% endblock content %}
-
-    </div> <!-- /container -->
 
     {% block modal %}{% endblock modal %}
 

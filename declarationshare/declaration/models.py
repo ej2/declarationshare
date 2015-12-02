@@ -29,3 +29,9 @@ class Declaration(models.Model):
 
     def __unicode__(self):
         return "{0} {1}".format(self.get_type_display(), self.text)
+
+    def display_author(self):
+        if self.anonymous:
+            return "Anonymous"
+        else:
+            return self.author

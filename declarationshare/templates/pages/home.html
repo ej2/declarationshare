@@ -1,39 +1,13 @@
 {% extends "base.html" %}
 {% load apps_declaration %}
- {% block header %}
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1>Make Your Declaration</h1>
-                <hr>
-                <p>
-                  Planning on taking over the world? Maybe you’ve decided to
-                  be the first to climb Mount Everest while
-                  wearing fuzzy pink bunny slippers? Are you a hopeless ice cream addict, an
-                  expert hula hooper, or a rescuer of small turtles found floundering on the road?
-                  Who are you? Who do you want to be? What will you do? Proclaim,
-                  announce and declare it here -- the world wants to know!  
-                </p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Share your declaration</a>
-            </div>
-        </div>
-    </header>
-{% endblock header %}
 
 {% block content %}
 
   <section class="bg-primary" id="about">
       <div class="container">
-          <div class="row">
-              <div class="col-lg-8 col-lg-offset-2 text-center">
-                  {% top_declarations %}
-              </div>
-          </div>
+          {% top_declarations %}
       </div>
   </section>
-
-
-
 
 {% endblock content %}
 
