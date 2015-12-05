@@ -10,16 +10,11 @@
     <meta name="author" content="">
 
     <meta property="og:site_name" content="Declaration Share"/>
-    {% block meta %}
-
-    {% endblock meta %}
-
-
+    {% block meta %}{% endblock meta %}
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
 
     <!-- Custom Fonts -->
@@ -32,6 +27,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/creative.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/project.css' %}" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,17 +36,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-    {% block css %}
-    <!-- Latest compiled and minified CSS -->
-
-
-
-    <!-- Your stuff: Third-party css libraries go here -->
-
-    <!-- This file store project specific CSS -->
-    <link href="{% static 'css/project.css' %}" rel="stylesheet">
-    {% endblock %}
+    {% block css %}{% endblock %}
 
     {% block angular %}
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -59,8 +45,6 @@
   </head>
 
   <body id="page-top">
-
-
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -105,7 +89,7 @@
         <!-- /.container-fluid -->
     </nav>
     {% block header %}
-      <header>
+      <!--<header>
         <div class="header-content">
             <div class="header-content-inner">
                 <h1>Make Your Declaration</h1>
@@ -121,7 +105,7 @@
                 <a href="{% url "declaration:new" %}#create" class="btn btn-primary btn-xl page-scroll">Share your declaration</a>
             </div>
         </div>
-      </header>
+      </header>-->
     {% endblock header %}
 
     <div class="container">

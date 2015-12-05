@@ -25,6 +25,7 @@ class Declaration(models.Model):
     user = models.ForeignKey(User, null=True, related_name="declarations")
 
     anonymous = models.BooleanField(default=False)
+    nsfw = models.BooleanField(default=False)
     author = models.CharField(max_length="50", null=True)
 
     def __unicode__(self):

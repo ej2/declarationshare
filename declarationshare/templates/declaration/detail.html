@@ -8,23 +8,33 @@
     <meta property="og:type" content="blog"/>
 {% endblock meta %}
 
-{% block header %}
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
+
+{% block content %}
+
+  <section class="" id="detail">
+      <div class="container">
+          <div class="row declaration-row">
+              <div class="col-md-6 declaration-home blue">
                 <h1>{{ declaration }}</h1>
                 <p>
                   This is declaration was made on {{ declaration.date_created|date:"M d, Y" }} by
-                  {% if declaration.anonymous %}Anonynomus{% else %}{{ declaration.author }}{% endif %}
+                {{ declaration.display_author }}
+
                 </p>
 
                 <p>
                   <a class="btn btn-primary btn-lg" href="{% url 'declaration:new' %}#create">Post your own »</a>
                 </p>
             </div>
-        </div>
-    </header>
-{% endblock header %}
 
-{% block content %}
+            <div class="col-md-3 declaration-box seafoam">
+            </div>
+            <div class="col-md-3 declaration-box yellow">
+            </div>
+
+        </div>
+    </div>
+  </section>
+
+
 {% endblock content %}

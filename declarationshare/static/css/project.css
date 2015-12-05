@@ -38,10 +38,58 @@
 }
 
 .form-text {
-  width: 300px;
+  color: white;
 }
 
 .form-element {
   color: black;
+}
 
+.simple-checkbox {
+  box-shadow: none;
+  color: white;
+}
+
+.declaration-home {
+  height: 400px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid white;
+  color: white;
+}
+
+.declaration-box {
+  padding: 10px;
+  height: 200px;
+  border: 1px solid white;
+  color: white;
+}
+
+.yellow {
+  background-color: #EEEDCF;
+}
+
+.green {
+  background-color: #758FA6;
+}
+
+.seafoam {
+  background-color: #89C1B6;
+}
+
+.brown {
+  background-color: #EDE0BE;
+}
+
+.blue {
+  /*background-color: #1485CC;*/
+  background-color: #499EB3;
+}
+
+.darkblue {
+  background-color: #345290;
+}
+
+.checkbox-container {
+   text-align: left;
 }

@@ -1,17 +1,6 @@
-<section class="bg-primary" id="about">
-  <div class="container">
     {% for declaration in declarations %}
-      {% if forloop.counter|divisibleby:4 %}
-        <div class="row">
-      {% endif %}
-
-      <div class="col-md-3">
+      <div class="col-md-3 declaration-box {% cycle  'seafoam' 'yellow'  '' 'blue' 'brown' '' %}">
           <h2 class="section-heading">{{ declaration }}</h2>
           <h5>- {{ declaration.display_author }}</h5>
       </div>
-      {% if forloop.counter|divisibleby:4 %}
-        </div>
-      {% endif %}
     {% endfor %}
-  </div>
-</section>

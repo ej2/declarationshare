@@ -6,7 +6,8 @@ from declarationshare.declaration.models import Declaration
 
 class DeclarationForm(forms.Form):
     text = forms.CharField(max_length=50, widget=forms.TextInput(attrs={"class": "form-element form-control"}))
-    anonymous = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={"class": "form-element form-control"}))
+    anonymous = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={"class": " inputcheckbox"}))
+    nsfw = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={"class": " inputcheckbox"}))
     author = forms.CharField(max_length=50, widget=forms.TextInput(attrs={"class": "form-element form-control"}))
 
     def __init__(self, *args, **kwargs):
@@ -33,6 +34,7 @@ class DeclarationForm(forms.Form):
 
         declaration.text = data.get("text")
         declaration.anonymous = data.get("anonymous")
+        declaration.nsfw = data.get("nsfw")
 
         if data.get("author"):
             declaration.author = data.get("author")

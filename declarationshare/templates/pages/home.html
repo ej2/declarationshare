@@ -3,9 +3,25 @@
 
 {% block content %}
 
-  <section class="bg-primary" id="about">
+  <section class="" id="about">
       <div class="container">
+        <div class="row declaration-row">
+          <div class="col-md-6 declaration-home blue">
+            <h1>Make Your Declaration</h1>
+              <p>
+                Planning on taking over the world? Maybe you’ve decided to be the first to climb Mount Everest
+                while wearing fuzzy pink bunny slippers? Are you a hopeless ice cream addict, an expert hula hooper,
+                or a rescuer of small turtles found floundering on the road? Who are you? Who do you want to be?
+                What will you do? Proclaim, announce and declare it here -- the world wants to know!
+              </p>
+          </div>
           {% top_declarations %}
+          <div class="col-md-3 declaration-box" style="padding-top: 80px;text-align: center;">
+            <h2 class="section-heading">
+              <a href="{% url "declaration:new" %}" class="btn btn-default">+ Post Declaration</a>
+            </h2>
+          </div>
+        </div>
       </div>
   </section>
 
