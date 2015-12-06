@@ -21,7 +21,7 @@ Collectfast==0.2.3
 django-mailgun==0.8.0
 
 
-
+django-extensions==1.5.9
 
 
 
