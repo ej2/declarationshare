@@ -5,13 +5,16 @@ from declarationshare.declaration.models import Declaration
 
 
 class DeclarationForm(forms.Form):
-    text = forms.CharField(max_length=50, widget=forms.TextInput(attrs={"class": "form-element form-control"}))
-    anonymous = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={"class": " inputcheckbox"}))
-    nsfw = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={"class": " inputcheckbox"}))
-    author = forms.CharField(max_length=35, widget=forms.TextInput(attrs={"class": "form-element form-control"}))
+    text = forms.CharField(
+        max_length=50, widget=forms.TextInput(attrs={"class": "form-element form-control"}))
+    anonymous = forms.BooleanField(
+        required=False, widget=forms.CheckboxInput(attrs={"class": " inputcheckbox"}))
+    nsfw = forms.BooleanField(
+        required=False, widget=forms.CheckboxInput(attrs={"class": " inputcheckbox"}))
+    author = forms.CharField(
+        required=False, max_length=35, widget=forms.TextInput(attrs={"class": "form-element form-control"}))
 
     def __init__(self, *args, **kwargs):
-        #self.user = kwargs.pop("user")
         self.declare_type = kwargs.pop("declare_type")
         self.instance = kwargs.pop("instance", None)
 
@@ -41,7 +44,7 @@ class DeclarationForm(forms.Form):
         else:
             declaration.anonymous = True
 
-        declaration.type = 'AM'
+        declaration.type = self.declare_type
         declaration.save()
 
         return declaration
