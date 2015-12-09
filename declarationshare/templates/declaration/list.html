@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block meta %}
+  <meta property="og:title" content="Declaration Share"/>
+  <meta property="og:description" content="Planning on taking over the world? Maybe you’ve decided to
+                be the first to climb Mount Everest while wearing fuzzy pink bunny slippers? Who are you?
+                Who do you want to be? What will you do? Proclaim,
+                announce and declare it here -- the world wants to know!"/>
+  <meta property="og:url" content="https://declarationshare.herokuapp.com">
+  <meta property="og:type" content="blog"/>
+{% endblock meta %}
+
+{% block content %}
+  <section class="" id="detail">
+    <div class="container">
+      <div class="row declaration-row">
+        {% for declaration in declarations %}
+          <div class="col-md-3 declaration-box {% cycle  'seafoam' 'yellow'  '' 'blue' 'brown' '' %}">
+            <h2 class="section-heading">{{ declaration }}</h2>
+            <h5>- {{ declaration.display_author }}</h5>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock content %}

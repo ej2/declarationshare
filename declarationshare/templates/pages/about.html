@@ -1,16 +1,15 @@
 {% extends "base.html" %}
 
-{% block header %}
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1>About Declaration Share</h1>
-                <p></p>
-
-                <p>
-                  <a class="btn btn-primary btn-lg" href="{% url 'declaration:new' %}">Post your own »</a>
-                </p>
-            </div>
+{% block content %}
+ <section class="" id="about">
+      <div class="container">
+        <div class="row declaration-row">
+          <div class="col-md-6 declaration-home blue">
+            <h1>About</h1>
+            <p>
+              Declaration Share is a simple art project I promised myself I would finish.
+            </p>
+          </div>
         </div>
-    </header>
-{% endblock header %}
+      </div>
+{% endblock content %}

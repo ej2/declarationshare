@@ -8,7 +8,7 @@ register = template.Library()
 
 @register.simple_tag()
 def top_declarations():
-    declarations = Declaration.objects.all()
+    declarations = Declaration.objects.filter(nsfw=False).order_by("-date_created")
 
     return render_to_string("declaration/top_list.html", {
         "declarations": declarations,

@@ -49,6 +49,16 @@
   </head>
 
   <body id="page-top">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=195900611139";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -65,28 +75,12 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="{% url "about" %}">About</a>
-                    </li>
-
+                  <li><a class="page-scroll" href="{% url "declaration:choose" %}">Post</a></li>
+                  <li><a class="page-scroll" href="{% url "declaration:list" %}">View All</a></li>
+                  <li><a class="page-scroll" href="{% url "declaration:nsfw" %}">NSFW</a></li>
+                  <li><a class="page-scroll" href="{% url "about" %}">About</a></li>
                 </ul>
-                <ul class="nav navbar-nav pull-right">
-              {% if request.user.is_authenticated %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Logout" %}</a>
-                </li>
-              {% else %}
-                <li class="nav-item">
-                  <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
-                </li>
-                <li class="nav-item">
-                  <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Log In" %}</a>
-                </li>
-              {% endif %}
-            </ul>
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -106,7 +100,7 @@
                   Who are you? Who do you want to be? What will you do? Proclaim,
                   announce and declare it here -- the world wants to know!  
                 </p>
-                <a href="{% url "declaration:new" %}#create" class="btn btn-primary btn-xl page-scroll">Share your declaration</a>
+                <a href="{% url "declaration:choose" %}#create" class="btn btn-primary btn-xl page-scroll">Share your declaration</a>
             </div>
         </div>
       </header>-->
