@@ -54,19 +54,21 @@
   height: 400px;
   padding: 20px;
   text-align: center;
-  border: 1px solid white;
+  border: 1px solid;
+  border-color: rgba(255,255,255,.3);
   color: white;
 }
 
 .declaration-box {
   padding: 10px;
   height: 200px;
-  border: 1px solid white;
+  border: 1px solid;
+  border-color: rgba(255,255,255,.3);
   color: white;
 }
 
 .yellow {
-  background-color: #EEEDCF;
+  background-color: rgba(238, 237, 207, 0.9);
 }
 
 .green {
@@ -90,6 +92,20 @@
   background-color: #345290;
 }
 
+.transparent-white {
+  background-color: rgba(255,255,255,.2);
+}
+
 .checkbox-container {
    text-align: left;
 }
+
+.declaration-link {
+  color: white;
+}
+
+.declaration-link:hover {
+  color: white;
+  text-decoration: none;
+}
+

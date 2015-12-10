@@ -24,21 +24,31 @@ class BaseDeclarationCreateView(CreateView):
 
 
 class IAmCreateView(BaseDeclarationCreateView):
-    template_name = "declaration/new_am.html"
+    template_name = "declaration/form.html"
 
     def get_form_kwargs(self):
         kwargs = super(IAmCreateView, self).get_form_kwargs()
         kwargs['declare_type'] = "AM"
         return kwargs
 
+    def get_context_data(self, **kwargs):
+        context = super(IAmCreateView, self).get_context_data(**kwargs)
+        context['type_label'] = "I am"
+        return context
+
 
 class IWillCreateView(BaseDeclarationCreateView):
-    template_name = "declaration/new_will.html"
+    template_name = "declaration/form.html"
 
     def get_form_kwargs(self):
         kwargs = super(IWillCreateView, self).get_form_kwargs()
         kwargs['declare_type'] = "WILL"
         return kwargs
+
+    def get_context_data(self, **kwargs):
+        context = super(IWillCreateView, self).get_context_data(**kwargs)
+        context['type_label'] = "I will"
+        return context
 
 
 class DeclarationListView(ListView):

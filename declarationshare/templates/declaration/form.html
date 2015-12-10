@@ -11,7 +11,7 @@
                 {% csrf_token %}
 
                   <div class="form-group">
-                    <label for="text" class="col-sm-2 control-label form-text">I will</label>
+                    <label for="text" class="col-sm-2 control-label form-text">{{ type_label }}</label>
                     <div class="col-sm-6">
                     {{ form.text }}
                     </div>
@@ -49,9 +49,3 @@
   </section>
 
 {% endblock content %}
-
-{% block additional-js %}
- <script>
-  $('.dropdown-toggle').dropdown()
- </script>
-{% endblock additional-js %}

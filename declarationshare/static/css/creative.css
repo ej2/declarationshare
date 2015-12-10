@@ -33,10 +33,6 @@ a {
     transition: all .35s;
 }
 
-a:hover,
-a:focus {
-    color: #eb3812;
-}
 
 h1,
 h2,
@@ -402,9 +398,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-    border-color: #ed431f;
     color: #fff;
-    background-color: #ee4b28;
 }
 
 .btn-primary:active,

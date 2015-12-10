@@ -10,7 +10,7 @@ register = template.Library()
 def top_declarations():
     declarations = Declaration.objects.filter(nsfw=False).order_by("-date_created")
 
-    return render_to_string("declaration/top_list.html", {
+    return render_to_string("declaration/_list.html", {
         "declarations": declarations,
     })
 
