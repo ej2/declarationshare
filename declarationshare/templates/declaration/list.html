@@ -15,6 +15,12 @@
     <div class="container">
       <div class="row declaration-row">
         {% include "declaration/_list.html" %}
+
+        <div class="col-md-3 declaration-box" style="padding-top: 80px;text-align: center;">
+            <h2 class="section-heading">
+              <a href="{% url "declaration:choose" %}" class="btn btn-default btn-declaration">+ Post Declaration</a>
+            </h2>
+          </div>
       </div>
     </div>
   </section>
