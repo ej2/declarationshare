@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% block title %}{{ declaration }} - post a declaration @{% endblock title %}
 {% block meta %}
   <meta property="og:title" content="{{ declaration }}"/>
   <meta property="og:description" content="Planning on taking over the world? Maybe you’ve decided to
@@ -22,11 +23,20 @@
                 </p>
 
                 <p>
-                  <a class="btn btn-primary btn-lg" href="{% url 'declaration:choose' %}#create">Post your own »</a>
+                  <a class="btn btn-primary btn-lg btn-declaration" href="{% url 'declaration:choose' %}#create">Post your own »</a>
                 </p>
 
                 <div>
-                  <div class="fb-share-button" data-href="https://declarationshare.herokuapp.com/declaration/1" data-layout="button">
+                  <div>
+                    <a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>
+                    <script>
+                      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+                    </script>
+                  </div>
+                  <div class="">
+                    <div class="fb-share-button" data-href="https://declarationshare.herokuapp.com/declaration/1" data-layout="button">
+                  </div>
+
                 </div>
               </div>
             </div>

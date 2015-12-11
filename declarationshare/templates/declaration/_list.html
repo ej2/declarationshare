@@ -3,6 +3,6 @@
     <h2 class="section-heading">
       <a class="declaration-link" href="{% url "declaration:detail" declaration.id %}">{{ declaration }}</a>
     </h2>
-    <h5>- {{ declaration.display_author }}</h5>
+    <h5 class="declaration-author">- {{ declaration.display_author }}</h5>
   </div>
 {% endfor %}
