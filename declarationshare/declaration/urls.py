@@ -7,8 +7,8 @@ from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
-    url(r'^/new/am$', views.IAmCreateView.as_view(), name="new_am"),
-    url(r'^/new/will$', views.IWillCreateView.as_view(), name="new_will"),
+    url(r'^new/am$', views.IAmCreateView.as_view(), name="new_am"),
+    url(r'^new/will$', views.IWillCreateView.as_view(), name="new_will"),
     url(r'^choose/$', TemplateView.as_view(template_name='declaration/choose.html'), name="choose"),
     url(
         regex=r'^list/$',

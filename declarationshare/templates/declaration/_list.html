@@ -1,8 +1,9 @@
 {% for declaration in declarations %}
+  <a class="declaration-link" href="{% url "declaration:detail" declaration.id %}">
   <div class="col-md-3 declaration-box {% cycle 'seafoam' 'yellow' 'transparent-white' 'blue' 'brown' '' %}">
     <h2 class="section-heading">
-      <a class="declaration-link" href="{% url "declaration:detail" declaration.id %}">{{ declaration }}</a>
+      {{ declaration }}
     </h2>
     <h5 class="declaration-author">- {{ declaration.display_author }}</h5>
-  </div>
+  </div></a>
 {% endfor %}
