@@ -66,11 +66,16 @@
   border: 1px solid;
   border-color: rgba(255,255,255,.3);
   color: white;
-  text-shadow: 1px 1px rgba(0, 0, 0, .3);
+  text-shadow: 1px 1px rgba(0, 0, 0, .4);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.declaration-box:hover {
+  border-color: rgba(255,255,255,1);
 }
 
 .yellow {
-  background-color: rgba(238, 237, 207, 0.9);
+  background-color: rgba(238, 237, 207, 1);
 }
 
 .green {
@@ -110,6 +115,7 @@
   color: white;
   text-shadow: 1px 1px rgba(0, 0, 0, .6);
   text-decoration: none;
+  border-color: white;
 }
 
 .declaration-author {
