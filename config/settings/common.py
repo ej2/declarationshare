@@ -184,9 +184,14 @@ STATIC_URL = '/static/'
 #     str(APPS_DIR.path('static')),
 # )
 
-#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-STATICFILES_DIRS = ('static', )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, '../../declarationshare/static'),
+    'static',
+)
+
+
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
