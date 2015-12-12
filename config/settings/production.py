@@ -11,6 +11,8 @@ Production Configurations
 '''
 from __future__ import absolute_import, unicode_literals
 
+import os
+
 from boto.s3.connection import OrdinaryCallingFormat
 from django.utils import six
 
@@ -98,6 +100,14 @@ INSTALLED_APPS += ("gunicorn", )
 
 #STATICFILES_STORAGE = DEFAULT_FILE_STORAGE
 #STATIC_URL = MEDIA_URL
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # See: https://github.com/antonagestam/collectfast
 # For Django 1.7+, 'collectfast' should come before
