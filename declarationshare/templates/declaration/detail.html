@@ -15,7 +15,7 @@
   <section class="" id="detail">
       <div class="container">
           <div class="row declaration-row">
-              <div class="col-md-6 declaration-home blue">
+              <div class="col-md-6 declaration-home blue1">
                 <h1>{{ declaration }}</h1>
                 <p>
                   This is declaration was made on {{ declaration.date_created|date:"M d, Y" }} by
@@ -34,7 +34,9 @@
                     </script>
                   </div>
                   <div class="">
-                    <div class="fb-share-button" data-href="https://declarationshare.herokuapp.com/declaration/1" data-layout="button">
+                    <div class="fb-share-button"
+                         data-href="http://declarationshare.herokuapp.com/declaration/{{ declaration.id }}"
+                         data-layout="button">
                   </div>
 
                 </div>

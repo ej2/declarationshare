@@ -1,9 +1,11 @@
 {% for declaration in declarations %}
   <a class="declaration-link" href="{% url "declaration:detail" declaration.id %}">
-  <div class="col-md-3 declaration-box {% cycle 'seafoam' 'yellow' 'transparent-white' 'blue' 'brown' '' %}">
+  <div class="col-md-3 declaration-box {% cycle 'green1' 'blue1' '' 'tan2' 'green2' '' 'tan1' 'blue2' ''  %}">
     <h2 class="section-heading">
       {{ declaration }}
     </h2>
     <h5 class="declaration-author">- {{ declaration.display_author }}</h5>
   </div></a>
 {% endfor %}
+
+<!-- {% cycle 'seafoam' 'yellow' 'transparent-white' 'blue' 'brown' '' %} -->

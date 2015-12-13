@@ -74,31 +74,6 @@
   border-color: rgba(255,255,255,1);
 }
 
-.yellow {
-  background-color: rgba(238, 237, 207, 1);
-}
-
-.green {
-  background-color: #758FA6;
-}
-
-.seafoam {
-  background-color: #89C1B6;
-}
-
-.brown {
-  background-color: #EDE0BE;
-}
-
-.blue {
-  /*background-color: #1485CC;*/
-  background-color: #499EB3;
-}
-
-.darkblue {
-  background-color: #345290;
-}
-
 .transparent-white {
   background-color: rgba(255,255,255,.2);
 }
@@ -126,3 +101,12 @@
 .btn-declaration {
   text-shadow: none;
 }
+
+.blue1 { background-color: #3b98b9; }
+.blue2 { background-color: #499EB3; }
+
+.tan1 { background-color: #cebd9f; }
+.tan2 { background-color: #cfdabc; }
+
+.green1 { background-color: #8dbbb0; }
+.green2 { background-color: #89C1B6; }
