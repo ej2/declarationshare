@@ -63,6 +63,7 @@
 @media (max-width: 767px) {
   .declaration-home {
     padding: 20px;
+    height: 480px;
     text-align: center;
     border: 1px solid;
     border-color: rgba(255,255,255,.3);
