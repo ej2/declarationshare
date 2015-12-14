@@ -28,6 +28,8 @@ class Declaration(models.Model):
     nsfw = models.BooleanField(default=False)
     author = models.CharField(max_length="50", null=True)
 
+    ip_address = models.CharField(max_length=45, null=True, blank=True)
+
     def __unicode__(self):
         return "{0} {1}".format(self.get_type_display(), self.text)
 

@@ -1,5 +1,6 @@
 from django import forms
 from django.forms import model_to_dict
+from ipware.ip import get_ip
 
 from declarationshare.declaration.models import Declaration
 
@@ -17,6 +18,7 @@ class DeclarationForm(forms.Form):
     def __init__(self, *args, **kwargs):
         self.declare_type = kwargs.pop("declare_type")
         self.instance = kwargs.pop("instance", None)
+        self.request = kwargs.pop('request', None)
 
         super(DeclarationForm, self).__init__(*args, **kwargs)
 
@@ -38,6 +40,7 @@ class DeclarationForm(forms.Form):
         declaration.text = data.get("text")
         declaration.anonymous = data.get("anonymous")
         declaration.nsfw = data.get("nsfw")
+        declaration.ip_address = get_ip(self.request)
 
         if data.get("author"):
             declaration.author = data.get("author")

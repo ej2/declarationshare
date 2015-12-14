@@ -29,6 +29,7 @@ class IAmCreateView(BaseDeclarationCreateView):
     def get_form_kwargs(self):
         kwargs = super(IAmCreateView, self).get_form_kwargs()
         kwargs['declare_type'] = "AM"
+        kwargs['request'] = self.request
         return kwargs
 
     def get_context_data(self, **kwargs):
@@ -43,6 +44,7 @@ class IWillCreateView(BaseDeclarationCreateView):
     def get_form_kwargs(self):
         kwargs = super(IWillCreateView, self).get_form_kwargs()
         kwargs['declare_type'] = "WILL"
+        kwargs['request'] = self.request
         return kwargs
 
     def get_context_data(self, **kwargs):
