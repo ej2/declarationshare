@@ -27,6 +27,12 @@
                   <a class="btn btn-primary btn-lg btn-declaration" href="{% url 'declaration:choose' %}#create">Post your own »</a>
                 </p>
 
+                {% if user.is_authenticated %}
+                  <p>
+                    IP: {{ declaration.ip_address }}
+                  </p>
+                {% endif %}
+
                 <div>
                   <div>
                     <a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>

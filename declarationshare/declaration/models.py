@@ -22,7 +22,7 @@ class Declaration(models.Model):
     type = models.CharField(max_length=4, null=False, choices=DELCARATION_TYPE)
     date_created = fields.CreationDateTimeField(editable=True)
     reminder_frequency = models.CharField(max_length=1, default="N")
-    user = models.ForeignKey(User, null=True, related_name="declarations")
+    user = models.ForeignKey(User, null=True, blank=True, related_name="declarations")
 
     anonymous = models.BooleanField(default=False)
     nsfw = models.BooleanField(default=False)

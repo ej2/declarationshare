@@ -29,6 +29,17 @@ class DeclarationForm(forms.Form):
     def is_edit(self):
         return self.instance is not None
 
+    def clean_text(self):
+        text = self.cleaned_data.get("text")
+
+        if self.declare_type == 'WILL':
+            text = text.replace("I will", "", 1)
+
+        if self.declare_type == 'AM':
+            text = text.replace("I am", "", 1)
+
+        return text
+
     def save(self):
         data = self.cleaned_data
 
